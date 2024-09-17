@@ -1,0 +1,35 @@
+markdown: kramdown
+kramdown:
+  input: GFM
+  gfm_quirks:
+    - paragraph_end
+  gfm_emojis: true
+
+remote_theme: pages-themes/primer@v0.6.0
+plugins:
+  - jekyll-remote-theme
+  - jekyll-relative-links
+show_downloads: false
+relative_links:
+  enabled: true
+  collections: true
+
+exclude:
+  - '*'
+include:
+  - '*.html'
+  - README.md
+
+github:
+  private: false
+  license:
+    name: MIT
+  source:
+    branch: master
+    path: /
+  repository_url: https://github.com/niquenen/gfm-toc
+
+title: gfm-toc
+description: >-
+  Simple tool to create a TOC (table of contents) and compliant with GitHub
+  Flavored Markdown (GFM).
