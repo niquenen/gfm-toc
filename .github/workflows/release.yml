@@ -37,7 +37,9 @@ jobs:
       - name: Build the project
         run: npm run build
       - name: Remove the read me content
-        run: truncate -s 0 README.md
+        run: |
+          truncate -s 0 README.md
+          echo " " > README.md
       - name: Publish package
         run: npm publish
         env:
