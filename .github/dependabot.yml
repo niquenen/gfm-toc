@@ -1,0 +1,23 @@
+version: 2
+updates:
+  # Maintain dependencies for GitHub Actions
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      timezone: Etc/UTC
+  # Maintain dependencies for npm
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: monthly
+      timezone: Etc/UTC
+    commit-message:
+      prefix: build
+      prefix-development: build
+      include: scope
+    ignore:
+      - dependency-name: '*'
+        update-types:
+          - version-update:semver-minor
+          - version-update:semver-patch
