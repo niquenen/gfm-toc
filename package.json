@@ -12,7 +12,7 @@
 	"description": "Simple tool to create table of contents.",
 	"main": "./dist/index.js",
 	"bin": {
-		"gfm-toc": "./dist/index.js"
+		"gfm-toc": "dist/index.js"
 	},
 	"private": false,
 	"scripts": {
