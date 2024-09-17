@@ -1,11 +1,3 @@
-/**
- * @author Cédric Hennequin
- * @company H2V Solutions
- * @created_at 2024-09-14 10:57:11
- * @updated_by Cédric Hennequin
- * @updated_at 2024-09-14 15:50:17
- */
-
 import { Buffer } from 'node:buffer';
 import type { PathLike, Stats } from 'node:fs';
 import { readFile, stat } from 'node:fs/promises';

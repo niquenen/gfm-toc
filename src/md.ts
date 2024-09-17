@@ -1,11 +1,3 @@
-/**
- * @author Cédric Hennequin
- * @company H2V Solutions
- * @created_at 2024-09-14 11:06:42
- * @updated_by Cédric Hennequin
- * @updated_at 2024-09-14 12:23:05
- */
-
 import type { Root, RootContent } from 'mdast';
 import { fromMarkdown } from 'mdast-util-from-markdown';
 import { toMarkdown } from 'mdast-util-to-markdown';
