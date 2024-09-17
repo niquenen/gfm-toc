@@ -147,7 +147,6 @@ export function create(map: TMap): string
 		toc += getItem(element[0], map, slugs, ignored);
 	}
 	toc += '</ul>';
-	console.log(template.replace('{{list}}', beautify.html_beautify(toc, htmlBeautifyOptions)));
 	return template.replace(
 		'{{list}}',
 		beautify.html_beautify(toc, htmlBeautifyOptions)

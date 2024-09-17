@@ -11,4 +11,4 @@ if (!buffer) {
 	console.error('Cannot read file.');
 	exit(1);
 }
-create(toList(toHtml(buffer)))
+console.log(create(toList(toHtml(buffer))));
