@@ -1,4 +1,3 @@
-// import { inspect } from 'node:util';
 import { default as serialize } from 'dom-serializer';
 import { parseDocument } from 'htmlparser2';
 import type { Nullable } from './types.js';
@@ -103,6 +102,5 @@ export function toList(data: string): TMap
 			}
 		);
 	}
-	// console.log(inspect(map, false, null, true));
 	return map;
 }
