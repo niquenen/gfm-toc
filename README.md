@@ -7,15 +7,21 @@ Flavored Markdown (GFM).
 
 Install with [npm](https://www.npmjs.com/).
 
-1. Add the registry in [.npmrc config file](
+1. Add registry in [.npmrc config file](
      https://docs.npmjs.com/cli/configuring-npm/npmrc
    ).
+
+   ```ini
+   @niquenen:registry=https://npm.pkg.github.com
+   ```
+
+2. Install the npm package.
 
    ```sh
    npm install --global @niquenen/gfm-toc
    ```
 
-2. Use gfm-toc.
+3. Use gfm-toc.
 
    ```sh
    gfm-toc <path>
