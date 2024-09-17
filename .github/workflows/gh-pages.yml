@@ -1,0 +1,48 @@
+name: Deploy Jekyll with GitHub Pages
+on:
+  release:
+    types:
+      - published
+  workflow_dispatch: null
+permissions:
+  actions: none
+  checks: none
+  contents: read
+  deployments: none
+  id-token: write
+  issues: none
+  discussions: none
+  packages: none
+  pages: write
+  pull-requests: none
+  repository-projects: none
+  security-events: none
+  statuses: none
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-22.04
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
