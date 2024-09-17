@@ -7,12 +7,12 @@ on:
 permissions:
   actions: none
   checks: none
-  contents: write
+  contents: read
   deployments: none
   id-token: none
   issues: none
   discussions: none
-  packages: none
+  packages: write
   pages: none
   pull-requests: none
   repository-projects: none
@@ -23,7 +23,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   build-and-publish:
-    name: Build and publish
+    name: Build and publish to Github Packages
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout repository
