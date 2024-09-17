@@ -36,7 +36,7 @@
 		"url": "https://github.com/niquenen/gfm-toc/issues"
 	},
 	"publishConfig": {
-		"registry": "https://npm.pkg.github.com"
+		"registry": "https://npm.pkg.github.com/@niquenen"
 	},
 	"dependencies": {
 		"dom-serializer": "^2.0.0",
