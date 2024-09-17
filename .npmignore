@@ -3,6 +3,7 @@
 node_modules/
 scripts/
 src/
+_config.yml
 .gitignore
 .npmrc
 commitlint.config.js
