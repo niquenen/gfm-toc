@@ -32,8 +32,7 @@ const htmlBeautifyOptions: HTMLBeautifyOptions = {
 	wrap_attributes_indent_size: 4
 };
 
-const template: string = `
-<details>
+const template: string = `<details>
 <summary>Table of contents</summary>
 
 {{list}}
