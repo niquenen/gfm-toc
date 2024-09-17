@@ -23,6 +23,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   build:
+    name: Build and upload Artifact
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
@@ -37,6 +38,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
   deploy:
+    name: Deploy to GitHub Pages
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
