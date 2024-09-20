@@ -41,10 +41,7 @@ export function getContent(node: TNode): Nullable<string>
 		result += serialize(
 			node.children[index]!,
 			{decodeEntities: true}
-		).replace(
-			/\r\n|\n/gu,
-			' '
-		).replace(/\p{Zs}+/gu, ' ').replace(/^\p{Zs}+|\p{Zs}+$/gu, '');
+		).replace(/^\p{Zs}+|\p{Zs}+$/gu, '');
 		if (node.children[index + 1]) {
 			result += ' ';
 		}
