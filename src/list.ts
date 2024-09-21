@@ -40,7 +40,7 @@ export function getContent(node: TNode): Nullable<string>
 	for (let index: number = 0; index < node.children.length; ++index) {
 		result += serialize(
 			node.children[index]!,
-			{decodeEntities: true}
+			{decodeEntities: false}
 		).replace(/^\p{Zs}+|\p{Zs}+$/gu, '');
 		if (node.children[index + 1]) {
 			result += ' ';
