@@ -61,17 +61,17 @@ function slugify(heading: string): string
  * @param map - The map containing the elements.
  * @returns An array of numbers representing the children elements.
  */
-function getChildrens(parent: number, map: TMap): Array<number>
+function getChildren(parent: number, map: TMap): Array<number>
 {
-	const childrens: Array<number> = [];
+	const children: Array<number> = [];
 
 	for (const element of map) {
 		if (element[1].parent != parent) {
 			continue;
 		}
-		childrens.push(element[0]);
+		children.push(element[0]);
 	}
-	return childrens;
+	return children;
 }
 
 /**
@@ -110,21 +110,20 @@ function getItem(
 	elementsIgnored: Array<number>
 ): string
 {
-	const childrensItems: Array<string> = [];
-	const childrens: Array<number> = getChildrens(element, map);
+	const elementLink: string = link(map.get(element)!, slugs);
+	const childrenItems: Array<string> = [];
+	const children: Array<number> = getChildren(element, map);
 
-	for (let index: number = 0; index < childrens.length; ++index) {
-		childrensItems.push(
-			getItem(childrens[index]!, map, slugs, elementsIgnored)
+	for (let index: number = 0; index < children.length; ++index) {
+		childrenItems.push(
+			getItem(children[index]!, map, slugs, elementsIgnored)
 		);
 	}
-	elementsIgnored.push(...childrens);
-	if (childrensItems.length) {
-		return `<li>${link(map.get(element)!, slugs)}<ul>${
-			childrensItems.join('')
-		}</ul></li>`;
+	elementsIgnored.push(...children);
+	if (childrenItems.length) {
+		return `<li>${elementLink}<ul>${childrenItems.join('')}</ul></li>`;
 	}
-	return `<li>${link(map.get(element)!, slugs)}</li>`;
+	return `<li>${elementLink}</li>`;
 }
 
 /**
